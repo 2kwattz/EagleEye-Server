@@ -1,0 +1,1 @@
+scrapping_url = 'https://www.airnavradar.com/@22.33270,72.66006,z8'

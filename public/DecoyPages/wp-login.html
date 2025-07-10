@@ -1,0 +1,158 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WordPress Login</title>
+    <link rel="stylesheet" href="./decoyPages/css/wp-login.css">
+</head>
+<body>
+    <div id="login">
+        <h1><a href="https://wordpress.org/" title="Powered by WordPress">WordPress</a></h1>
+
+        <form name="loginform" id="loginform" action="login.php" method="post">
+            <p>
+                <label for="user_login">Username or Email Address</label>
+                <input type="text" name="log" id="user_login" class="input" value="" size="20" placeholder="Username or Email Address" required>
+            </p>
+
+            <p>
+                <label for="user_pass">Password</label>
+                <input type="password" name="pwd" id="user_pass" class="input" value="" size="20" placeholder="Password" required>
+            </p>
+
+            <p class="forgetmenot">
+                <label for="rememberme">
+                    <input name="rememberme" type="checkbox" id="rememberme" value="forever"> Remember Me
+                </label>
+            </p>
+
+            <p class="submit">
+                <input type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large" value="Log In">
+            </p>
+
+            <p id="nav">
+                <a href="https://wordpress.org/support/lost-password/" title="Lost your password?">Lost your password?</a>
+            </p>
+
+            <input type="hidden" name="redirect_to" value="https://your-site.com/dashboard">
+            <input type="hidden" name="testcookie" value="1">
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="WordPress 6.1" />
+    <title>WordPress ‹ Site Name › Log In</title>
+    <link rel="stylesheet" href="./decoyPages/css/wp-login.css">
+    <!-- Additional styling assets to mimic genuine WP login interface -->
+    <link rel="stylesheet" href="https://s.w.org/style/wp-admin.css?ver=6.1" type="text/css" media="screen" />
+    <script src="https://s.w.org/wp-includes/js/jquery/jquery.js?ver=1.12.4"></script>
+    <style>
+        /* Supplemental inline styling to reinforce WP clone appearance */
+        body {
+            background: #f1f1f1;
+        }
+        #login {
+            margin: 7% auto;
+            width: 320px;
+            padding: 8% 0 0;
+        }
+        .login h1 a {
+            background-image: url('https://s.w.org/images/logo.svg');
+            width: 84px;
+            height: 84px;
+            background-size: contain;
+            -webkit-background-size: contain;
+            background-repeat: no-repeat;
+        }
+        .login form {
+            background: #fff;
+            border: 1px solid #c3c4c7;
+            padding: 26px 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,.13);
+        }
+        .login label {
+            display: block;
+            margin-bottom: 0.5em;
+            font-weight: bold;
+        }
+        .login input[type="text"],
+        .login input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            margin-bottom: 1em;
+        }
+        .login .button-primary {
+            width: 100%;
+            padding: 10px;
+            background: #0073aa;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .login .button-primary:hover {
+            background: #006799;
+        }
+        .login #nav a,
+        .login #backtoblog a {
+            font-size: 13px;
+            color: #0073aa;
+            text-decoration: none;
+        }
+        .login #nav a:hover,
+        .login #backtoblog a:hover {
+            color: #005177;
+        }
+    </style>
+</head>
+<body class="login">
+    <div id="login">
+        <h1>
+            <a href="https://wordpress.org/" title="Powered by WordPress">WordPress</a>
+        </h1>
+
+        <form name="loginform" id="loginform" action="login.php" method="post">
+            <p>
+                <label for="user_login">Username or Email Address</label>
+                <input type="text" name="log" id="user_login" class="input" value="" size="20" placeholder="Username or Email Address" required>
+            </p>
+
+            <p>
+                <label for="user_pass">Password</label>
+                <input type="password" name="pwd" id="user_pass" class="input" value="" size="20" placeholder="Password" required>
+            </p>
+
+            <p class="forgetmenot">
+                <label for="rememberme">
+                    <input name="rememberme" type="checkbox" id="rememberme" value="forever"> Remember Me
+                </label>
+            </p>
+
+            <p class="submit">
+                <input type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large" value="Log In">
+            </p>
+
+            <p id="nav">
+                <a href="https://wordpress.org/support/lost-password/" title="Lost your password?">Lost your password?</a>
+            </p>
+
+            <input type="hidden" name="redirect_to" value="https://your-site.com/dashboard">
+            <input type="hidden" name="testcookie" value="1">
+        </form>
+        <p id="backtoblog">
+            <a href="https://your-site.com" title="Go to Site">← Back to Your Site</a>
+        </p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

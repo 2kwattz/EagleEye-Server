@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Program Files\Python312\Lib\site-packages\botasaurus\browser_decorator.py", line 201, in run_task
+    result = func(driver, data)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\2kwattz\Desktop\EagleEye-Baseline\Scrapper\scrapper2.py", line 76, in scrape_heading_task
+    driver.get(data["url"], timeout=60)
+               ~~~~^^^^^^^
+TypeError: 'NoneType' object is not subscriptable

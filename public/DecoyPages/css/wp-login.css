@@ -1,0 +1,93 @@
+/* General Styles */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* WordPress login container */
+#login {
+    background: white;
+    padding: 26px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    border-radius: 6px;
+}
+
+#login h1 {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+#login h1 a {
+    color: #0073aa;
+    text-decoration: none;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+input.input {
+    font-size: 14px;
+    line-height: 1.4;
+    padding: 0.8em;
+    width: 100%;
+    margin: 0.5em 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fafafa;
+}
+
+input.input:focus {
+    border-color: #0073aa;
+    outline: none;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+button.button-primary {
+    background-color: #0073aa;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%;
+    cursor: pointer;
+}
+
+button.button-primary:hover {
+    background-color: #006799;
+}
+
+#nav {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+#nav a {
+    color: #0073aa;
+    text-decoration: none;
+}
+
+#nav a:hover {
+    text-decoration: underline;
+}
+
+.forgetmenot {
+    font-size: 12px;
+}
+
+#wp-submit {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 12px;
+}

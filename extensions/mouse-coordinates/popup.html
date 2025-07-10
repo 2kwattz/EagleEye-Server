@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Coordinates</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <style>
+        :root {
+            --bg-color: #333;
+            --text-color: #f9f9f9;
+            --input-bg-color: #555;
+            --input-text-color: #fff;
+            --button-bg-color: #4CAF50;
+            --button-text-color: #fff;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            width: 300px;
+            padding: 20px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+        h1 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--text-color);
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .instructions, .warning {
+            font-size: 12px;
+            margin-top: 10px;
+            text-align: center;
+            color: var(--text-color);
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+            background-color: var(--button-bg-color);
+            color: var(--button-text-color);
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        input[type="checkbox"] {
+            cursor: pointer;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid var(--text-color);
+            border-radius: 3px;
+            background-color: var(--input-bg-color);
+            color: var(--input-text-color);
+        }
+    </style>
+</head>
+<body>
+    <h1>Mouse Coordinates</h1>
+    <div class="container">
+        <div class="checkbox-group">
+            <input type="checkbox" id="offsetToggle" title="Enable or disable custom Y offset">
+            <label for="offsetToggle">Enable Custom Y Offset</label>
+        </div>
+        <input type="number" id="offsetValue" min="0" value="90" disabled placeholder="Enter Y Offset Value" title="Set the Y offset value">
+        <div class="checkbox-group">
+            <input type="checkbox" id="showCoordinatesToggle" title="Show or hide mouse coordinates">
+            <label for="showCoordinatesToggle">Show Coordinates</label>
+        </div>
+        <div class="checkbox-group">
+            <input type="checkbox" id="themeToggle" title="Toggle dark mode">
+            <label for="themeToggle">Dark Mode</label>
+        </div>
+        <div class="instructions" id="saveInstructions">
+            To save coordinates, press the "x" key on your keyboard.
+        </div>
+        <div class="warning">
+            If the extension doesn't work immediately, please refresh the page.
+        </div>
+        <button id="refreshPage">Refresh Page</button>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
