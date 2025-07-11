@@ -55,7 +55,49 @@ async def move_mouse_with_cursor(page,x,y):
 # Scrolling
 # Any default interaction
 
+async def human_like_default(page, x1, y1, x2, y2):
+    # Randomly select a movement profile
+    profile = random.choice(['default_fast', 'default_slow', 'default_precise', 'default_jittery'])
 
+    # 🧪 Tweak behavior based on selected profile
+    if profile == 'default_fast':
+        steps = random.randint(30, 45)
+        jitter = random.uniform(0.3, 1.0)
+        sleep_time = 0.004
+    elif profile == 'default_slow':
+        steps = random.randint(60, 80)
+        jitter = random.uniform(0.7, 1.5)
+        sleep_time = 0.01
+    elif profile == 'default_precise':
+        steps = random.randint(40, 60)
+        jitter = random.uniform(0.1, 0.4)
+        sleep_time = 0.007
+    elif profile == 'default_jittery':
+        steps = random.randint(50, 70)
+        jitter = random.uniform(1.5, 3.0)
+        sleep_time = 0.012
+    else:
+        steps = 50
+        jitter = 1.0
+        sleep_time = 0.01
+
+    print(f"[Cursor Mood] Using profile: {profile}")
+
+    # Movement loop
+    for i in range(steps):
+        t = i / steps
+        eased = math.sin(t * math.pi / 2)
+
+        x = x1 + (x2 - x1) * eased + random.uniform(-jitter, jitter)
+        y = y1 + (y2 - y1) * eased + random.uniform(-jitter, jitter)
+
+        await page.mouse.move(x, y)
+        await page.evaluate(f'_updateFakeCursor({x}, {y})')
+        await asyncio.sleep(sleep_time + random.uniform(0, 0.005))
+
+    # Final snap to exact spot
+    await page.mouse.move(x2, y2)
+    await page.evaluate(f'_updateFakeCursor({x2}, {y2})')
 
 
 # Shaky (The Nervous Intern)
@@ -72,6 +114,98 @@ async def move_mouse_with_cursor(page,x,y):
 # CAPTCHA sliders
 # Hovering animations
 # Mimicking “older user” mouse control
+
+
+
+
+# Overshoot (The Clumsy Human)
+
+# Behavior:
+# Mouse intentionally overshoots the target,
+# then comes back and corrects position (in 2 phases).
+# The cursor moves PAST the target — like 20–50 pixels beyond
+# Then it pauses for a split second (like “oops”)
+# Then it comes back smoothly to the actual target
+
+# Analogy:
+# Like when you reach for the door handle but miss the first time — then pretend you meant to do that.
+
+# Use Case:
+
+# Checkbox or small-button clicking
+# Mimicking imperfect hand-eye coordination
+# Helps fool some ML-based bot detectors
+
+
+
+
+# Curve (The Lazy Navigator)
+
+# Behavior:
+# Moves in a Bezier curve / arc, with mid-point wobble.
+# Doesn’t go in a straight line — prefers a natural curve path like real mouse use.
+
+# Analogy:
+# The guy who avoids direct routes and finds weird ways to walk to a chai tapri.
+# (Also you trying to avoid emotional confrontation.)
+
+# Use Case:
+
+# Hover movement
+# Drag-and-drop
+# Natural side-to-side gestures
+
+
+
+
+# Hesitant (The overthinker)
+
+# Behavior:
+# Starts moving, randomly pauses mid-way at 2–3 points, then continues.
+# Each pause adds a small delay (300–700ms).
+
+# Analogy:
+# Like someone who’s about to click “Send” on a long text… then stops…
+# thinks about life… then clicks anyway.
+
+# Use Case:
+
+# Button interactions
+# Long text fields
+# Mimicking distracted user behavior
+
+
+
+
+# Loop (The Fancy Showoff)
+
+# Behavior:
+# Moves to target while spiraling inward, like an idiot doing doughnuts in an empty parking lot.
+
+# Analogy:
+# The guy who could just walk straight, but decides to backflip into a chair to impress imaginary girls.
+
+# Use Case:
+
+# Dragging
+# Games / visual bots
+# Just flexing
+
+
+# Zigzag (The paranoid ninja)
+
+# Behavior:
+# Takes an alternate left-right path in sharp angles,
+# like dodging bullets instead of moving straight.
+
+# Analogy:
+# You walking through your ex's lane on purpose, trying to act like it’s “just on the way.”
+
+# Use Case:
+
+# Mimicking users who use cheap trackpads or are scared of UI
+# CAPTCHA bait clicks
+# Looks extra human to machine learning models
 
 
 
